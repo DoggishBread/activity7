@@ -8,6 +8,16 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function group()
+    {
+        return $this->belongsTo(Group::class);
+    }
+    
     use Notifiable;
 
     /**
